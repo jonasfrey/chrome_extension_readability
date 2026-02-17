@@ -1,0 +1,1 @@
+this extension lets you adjust the width of webpage text sections to improve readability of such

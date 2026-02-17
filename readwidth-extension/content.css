@@ -1,0 +1,224 @@
+/* ── Highlight on target element ───────────────────────────── */
+
+.readwidth-highlight {
+  outline: 2px dashed #4a90d9 !important;
+  outline-offset: 3px !important;
+  transition: outline 0.15s ease !important;
+}
+
+/* ── Floating Panel ───────────────────────────────────────── */
+
+#readwidth-panel {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 2147483647;
+  width: 280px;
+  background: #1e1e2e;
+  color: #cdd6f4;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  overflow: hidden;
+  user-select: none;
+  transition: box-shadow 0.2s;
+}
+
+#readwidth-panel * {
+  box-sizing: border-box;
+}
+
+/* Header / drag handle */
+.rw-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #181825;
+  cursor: grab;
+}
+
+.rw-header:active {
+  cursor: grabbing;
+}
+
+.rw-logo {
+  font-weight: 700;
+  font-size: 13px;
+  color: #89b4fa;
+  letter-spacing: 0.02em;
+}
+
+.rw-close {
+  background: none;
+  border: none;
+  color: #6c7086;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 2px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.rw-close:hover {
+  color: #f38ba8;
+}
+
+/* Body */
+.rw-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rw-info {
+  text-align: center;
+  color: #a6adc8;
+  font-size: 12px;
+}
+
+.rw-info strong {
+  color: #fab387;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Controls */
+.rw-control label {
+  display: block;
+  font-size: 11px;
+  color: #7f849c;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 5px;
+}
+
+.rw-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rw-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: #313244;
+  border-radius: 3px;
+  outline: none;
+}
+
+.rw-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #89b4fa;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #1e1e2e;
+  transition: transform 0.1s;
+}
+
+.rw-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.rw-value {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 700;
+  color: #cdd6f4;
+  font-size: 15px;
+}
+
+/* Scope buttons */
+.rw-scope-row {
+  display: flex;
+  gap: 6px;
+}
+
+.rw-scope-btn {
+  flex: 1;
+  padding: 5px 8px;
+  border: 1px solid #45475a;
+  background: #313244;
+  color: #a6adc8;
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.rw-scope-btn:hover {
+  background: #45475a;
+}
+
+.rw-scope-btn.active {
+  background: #89b4fa;
+  color: #1e1e2e;
+  border-color: #89b4fa;
+  font-weight: 600;
+}
+
+/* Action buttons */
+.rw-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.rw-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.rw-apply {
+  background: #a6e3a1;
+  color: #1e1e2e;
+}
+
+.rw-apply:hover {
+  background: #94e2d5;
+  transform: translateY(-1px);
+}
+
+.rw-reset {
+  background: #45475a;
+  color: #cdd6f4;
+}
+
+.rw-reset:hover {
+  background: #585b70;
+}
+
+/* Guide bar */
+.rw-guide {
+  padding-top: 2px;
+}
+
+.rw-guide-bar {
+  position: relative;
+  height: 8px;
+  background: linear-gradient(90deg, #f38ba8 0%, #fab387 22%, #a6e3a1 33%, #a6e3a1 56%, #fab387 67%, #f38ba8 100%);
+  border-radius: 4px;
+  overflow: hidden;
+  opacity: 0.7;
+}
+
+.rw-zone {
+  position: absolute;
+  top: -18px;
+  font-size: 9px;
+  color: #a6adc8;
+  white-space: nowrap;
+}
